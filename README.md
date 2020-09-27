@@ -1,6 +1,8 @@
 # API
 
-### Installation
+![Screenshot](screenshot.gif)
+
+### Installat
    * Import the dump.sql into the MySQL DB
    * Configure the `.env` using the example file `.env.dist`
    * Execute the command `npm install` inside the directory `client`
