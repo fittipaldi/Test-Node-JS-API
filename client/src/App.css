@@ -1,0 +1,123 @@
+.App {
+    text-align: center;
+}
+
+.App-header {
+    background-color: #282c34;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
+}
+
+.menu-link {
+    padding: 10px;
+    margin: 0 5px;
+    border: solid 1px #2E72B7;
+    border-radius: 5px;
+    background-color: #2E72B7;
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.menu-link:hover {
+    background-color: #1346b7;
+}
+
+.top-menu {
+    margin: 20px auto;
+}
+
+.list {
+    margin: 0 auto;
+    padding: 10px;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 10px;
+}
+
+.box {
+    border: 2px solid #ccc;
+    float: left;
+    width: 30%;
+    padding: 10px;
+    margin: 5px;
+}
+
+.story-center {
+    margin: 0 auto;
+}
+
+.ipt {
+    padding: 5px;
+}
+
+.btn-save {
+    cursor: pointer;
+    padding: 5px;
+    margin: 0 5px;
+    border: 1px solid #28a745;
+    border-radius: 5px;
+    background-color: #28a745;
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.btn-save:hover {
+    background-color: #218838;
+}
+
+.btn-del {
+    float: right;
+    cursor: pointer;
+    padding: 5px;
+    margin: 0 5px;
+    border: 1px solid #dc3545;
+    border-radius: 5px;
+    background-color: #dc3545;
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.btn-del:hover {
+    background-color: #c82333;
+}
+
+.btn-edit {
+    float: right;
+    cursor: pointer;
+    padding: 5px;
+    margin: 0 5px;
+    border: 1px solid #ffc107;
+    border-radius: 5px;
+    background-color: #ffc107;
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.btn-edit:hover {
+    background-color: #e0a800;
+}
+
+.story-link {
+    color: #000;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.story-link:hover {
+    text-decoration: underline;
+    color: #382fb7;
+}
+
