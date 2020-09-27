@@ -130,15 +130,7 @@ const Stories = (props) => {
 
     const saveStory = async (item_id, text, parent_id, position) => {
         try {
-            await setState({
-                ...state,
-                edit_up: false,
-                edit_left: false,
-                edit_center: false,
-                edit_right: false,
-                edit_down: false,
-                isLoading: true
-            });
+            await setState({...state, isLoading: true});
             const params = {
                 id: item_id,
                 text: text,
@@ -181,6 +173,11 @@ const Stories = (props) => {
                             ...state,
                             isLoading: false,
                             message: resp.msg,
+                            edit_up: false,
+                            edit_left: false,
+                            edit_center: false,
+                            edit_right: false,
+                            edit_down: false,
                             story_up: t_story_up,
                             story_up_id: t_story_up_id,
                             story_left: t_story_left,
@@ -257,16 +254,16 @@ const Stories = (props) => {
                 saveStory(story_up_id, story_up, story_center_id, 'U');
                 break;
             case 'save_left':
-                saveStory(story_left, story_center_id, 'L');
+                saveStory(story_left_id, story_left, story_center_id, 'L');
                 break;
             case 'save_center':
-                saveStory(story_center, null, 'C');
+                saveStory(story_center_id, story_center, null, 'C');
                 break;
             case 'save_right':
-                saveStory(story_right, story_center_id, 'R');
+                saveStory(story_right_id, story_right, story_center_id, 'R');
                 break;
             case 'save_down':
-                saveStory(story_down, story_center_id, 'D');
+                saveStory(story_down_id, story_down, story_center_id, 'D');
                 break;
         }
     };
@@ -344,13 +341,14 @@ const Stories = (props) => {
                     </div>
                     <div className="row">
                         <div className="story-left box">
-                            {(story_left_id && story_left) ?
+                            {(story_left_id && story_left && !edit_left) ?
                                 <div>
                                     <a className="story-link" href={'/story/' + story_left_id}>{story_left}</a>
                                     <button className="btn-del" onClick={() => {
                                         deleteItem(story_left_id);
                                     }}>Del
                                     </button>
+                                    <button className="btn-edit" name="edit_left" onClick={editItem}>Edit</button>
                                 </div>
                                 :
                                 <div>
@@ -375,13 +373,14 @@ const Stories = (props) => {
                             }
                         </div>
                         <div className="story-right box">
-                            {(story_right_id && story_right) ?
+                            {(story_right_id && story_right && !edit_right) ?
                                 <div>
                                     <a className="story-link" href={'/story/' + story_right_id}>{story_right}</a>
                                     <button className="btn-del" onClick={() => {
                                         deleteItem(story_right_id);
                                     }}>Del
                                     </button>
+                                    <button className="btn-edit" name="edit_right" onClick={editItem}>Edit</button>
                                 </div>
                                 :
                                 <div>
@@ -395,13 +394,14 @@ const Stories = (props) => {
                     </div>
                     <div className="row">
                         <div className="story-center box">
-                            {(story_down_id && story_down) ?
+                            {(story_down_id && story_down && !edit_down) ?
                                 <div>
                                     <a className="story-link" href={'/story/' + story_down_id}>{story_down}</a>
                                     <button className="btn-del" onClick={() => {
                                         deleteItem(story_down_id);
                                     }}>Del
                                     </button>
+                                    <button className="btn-edit" name="edit_down" onClick={editItem}>Edit</button>
                                 </div>
                                 :
                                 <div>
